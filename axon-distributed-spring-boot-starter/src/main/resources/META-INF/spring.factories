@@ -1,0 +1,5 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  com.axon.distributed.autoconfigure.AxonServerDisablerPostProcessor,\
+  com.axon.distributed.autoconfigure.JacksonPostProcessor,\
+  com.axon.distributed.autoconfigure.PostgresHibernatePostProcessor,\
+  com.axon.distributed.autoconfigure.SchedulerPostProcessor

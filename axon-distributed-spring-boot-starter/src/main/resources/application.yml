@@ -1,0 +1,107 @@
+# =====================================================
+# Axon Distributed Framework - Default Configuration
+# =====================================================
+
+
+axon:
+  serializer:
+    general: JACKSON
+    events: JACKSON
+    messages: JACKSON
+
+  distributed:
+    # Enable/disable the distributed features
+    enabled: true
+
+    # Command Bus Configuration
+    command-bus:
+      # RabbitMQ exchange name for commands
+      exchange: axon.commands
+      # Command timeout in milliseconds
+      timeout: 30000
+
+    # Event Bus Configuration
+    event-bus:
+      # RabbitMQ exchange name for events
+      exchange: axon.events
+      # Event timeout in milliseconds
+      timeout: 10000
+
+    # Query Bus Configuration (Phase 1)
+    query-bus:
+      # RabbitMQ exchange name for events
+      exchange: axon.queries
+      # Query timeout in milliseconds
+      timeout: 10000
+
+    # Service Discovery Configuration (Phase 1)
+    service-discovery:
+      # RabbitMQ exchange name for service discovery
+      exchange: axon.discovery.heartbeat
+      # Heartbeat interval in milliseconds (5 seconds)
+      heartbeat-interval: 5000
+      # Stale threshold in milliseconds (consider service dead after this) (15 seconds)
+      stale-threshold: 15000
+
+    # Event Store Configuration
+    event-store:
+      # Snapshot trigger configuration
+      snapshot-threshold: 250
+      # Batch size for event fetching
+      batch-size: 100
+
+    # Token Store Configuration
+    token-store:
+      # Claim timeout in milliseconds (10 seconds)
+      claim-timeout: 10000
+      # Claim update interval in milliseconds (5 seconds)
+      claim-update-interval: 5000
+      # Node identifier (auto-generated if not provided)
+      node-id: ${spring.application.name:axon-node}-${random.uuid}
+
+    # Saga Store Configuration (Phase 1)
+    saga-store:
+      # Claim timeout in milliseconds
+      claim-timeout: 10000
+
+    # Dead Letter Queue Configuration (Phase 1)
+    dead-letter:
+      # Enable dead letter queue
+      enabled: true
+      # Maximum retry attempts before moving to DLQ
+      max-retries: 3
+
+# Spring DataSource Configuration
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${spring.application.name:axon-application}_database
+    username: guest
+    password: guest
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  # Flyway configuration
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    validate-on-migrate: true
+
+  # RabbitMQ Configuration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    # Connection retry
+    connection-timeout: 30000
+    requested-heartbeat: 60
