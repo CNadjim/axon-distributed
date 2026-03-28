@@ -31,9 +31,9 @@ public class AxonServerDisablerPostProcessor implements EnvironmentPostProcessor
 
             // Propriétés par défaut — priorité minimale, l'utilisateur peut les overrider.
             Map<String, Object> defaultProperties = new HashMap<>();
-            defaultProperties.put("axon.serializer.general", "jackson");
-            defaultProperties.put("axon.serializer.events", "jackson");
-            defaultProperties.put("axon.serializer.messages", "jackson");
+            defaultProperties.put("axon.serializer.general", "JACKSON");
+            defaultProperties.put("axon.serializer.events", "JACKSON");
+            defaultProperties.put("axon.serializer.messages", "JACKSON");
 
             // Mapping Event Bus -> AMQP (pour AMQPAutoConfiguration / SpringAMQPPublisher).
             // La valeur vient de la propriété utilisateur ou du défaut de AxonDistributedProperties.

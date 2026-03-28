@@ -24,7 +24,6 @@ import java.util.UUID;
 @EnableConfigurationProperties(AxonDistributedProperties.class)
 @Import({
         RouterConfiguration.class,
-        JacksonConfiguration.class,
         QueryBusConfiguration.class,
         EventBusConfiguration.class,
         RabbitMqConfiguration.class,
