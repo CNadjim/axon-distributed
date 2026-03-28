@@ -1,9 +1,9 @@
-package com.axon.distributed.mapper;
+package io.github.cnadjim.axon.distributed.mapper;
 
-import com.axon.distributed.member.LocalMember;
-import com.axon.distributed.member.RemoteMember;
-import com.axon.distributed.member.SpringRemoteMember;
-import com.axon.distributed.messaging.HeartbeatMessage;
+import io.github.cnadjim.axon.distributed.member.LocalMember;
+import io.github.cnadjim.axon.distributed.member.RemoteMember;
+import io.github.cnadjim.axon.distributed.member.SpringRemoteMember;
+import io.github.cnadjim.axon.distributed.messaging.HeartbeatMessage;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;

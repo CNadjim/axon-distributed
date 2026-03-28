@@ -1,4 +1,4 @@
-package com.axon.distributed.router;
+package io.github.cnadjim.axon.distributed.router;
 
 import org.axonframework.commandhandling.distributed.Member;
 import org.axonframework.queryhandling.QueryMessage;

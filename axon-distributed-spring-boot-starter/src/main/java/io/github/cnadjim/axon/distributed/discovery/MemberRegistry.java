@@ -1,8 +1,8 @@
-package com.axon.distributed.discovery;
+package io.github.cnadjim.axon.distributed.discovery;
 
-import com.axon.distributed.member.CustomMember;
-import com.axon.distributed.member.LocalMember;
-import com.axon.distributed.member.RemoteMember;
+import io.github.cnadjim.axon.distributed.member.CustomMember;
+import io.github.cnadjim.axon.distributed.member.LocalMember;
+import io.github.cnadjim.axon.distributed.member.RemoteMember;
 import org.axonframework.commandhandling.CommandMessage;
 import org.axonframework.queryhandling.QueryMessage;
 

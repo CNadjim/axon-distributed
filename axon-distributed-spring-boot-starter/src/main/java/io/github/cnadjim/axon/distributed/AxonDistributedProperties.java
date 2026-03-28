@@ -1,4 +1,4 @@
-package com.axon.distributed;
+package io.github.cnadjim.axon.distributed;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

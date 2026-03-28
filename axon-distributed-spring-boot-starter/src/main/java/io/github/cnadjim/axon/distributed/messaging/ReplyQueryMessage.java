@@ -1,4 +1,4 @@
-package com.axon.distributed.messaging;
+package io.github.cnadjim.axon.distributed.messaging;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;

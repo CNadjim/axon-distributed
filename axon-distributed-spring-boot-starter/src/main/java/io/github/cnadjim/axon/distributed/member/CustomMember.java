@@ -1,4 +1,4 @@
-package com.axon.distributed.member;
+package io.github.cnadjim.axon.distributed.member;
 
 import org.axonframework.commandhandling.CommandMessage;
 import org.axonframework.commandhandling.distributed.Member;

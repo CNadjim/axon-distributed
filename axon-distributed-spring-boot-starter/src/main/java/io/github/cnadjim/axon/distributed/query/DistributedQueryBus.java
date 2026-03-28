@@ -1,9 +1,9 @@
-package com.axon.distributed.query;
+package io.github.cnadjim.axon.distributed.query;
 
-import com.axon.distributed.discovery.MemberRegistry;
-import com.axon.distributed.messaging.SpringDispatchQueryMessage;
-import com.axon.distributed.messaging.SpringReplyQueryMessage;
-import com.axon.distributed.router.CustomRouter;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.messaging.SpringDispatchQueryMessage;
+import io.github.cnadjim.axon.distributed.messaging.SpringReplyQueryMessage;
+import io.github.cnadjim.axon.distributed.router.CustomRouter;
 
 import org.axonframework.commandhandling.distributed.Member;
 import org.axonframework.common.DirectExecutor;

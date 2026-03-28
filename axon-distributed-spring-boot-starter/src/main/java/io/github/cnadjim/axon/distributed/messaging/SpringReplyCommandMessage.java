@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.axon.distributed.messaging;
+package io.github.cnadjim.axon.distributed.messaging;
 
 import org.axonframework.commandhandling.CommandResultMessage;
 import org.axonframework.commandhandling.distributed.ReplyMessage;

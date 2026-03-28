@@ -1,4 +1,4 @@
-package com.axon.distributed.messaging;
+package io.github.cnadjim.axon.distributed.messaging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.axonframework.commandhandling.CommandResultMessage;

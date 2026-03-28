@@ -1,4 +1,4 @@
-package com.axon.distributed.deadline;
+package io.github.cnadjim.axon.distributed.deadline;
 
 import org.axonframework.serialization.SerializedObject;
 import org.axonframework.serialization.Serializer;

@@ -1,7 +1,7 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
-import com.axon.distributed.discovery.MemberRegistry;
-import com.axon.distributed.router.MemberRouter;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.router.MemberRouter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;

@@ -1,11 +1,11 @@
-package com.axon.distributed.discovery;
+package io.github.cnadjim.axon.distributed.discovery;
 
-import com.axon.distributed.member.CustomMember;
-import com.axon.distributed.member.LocalMember;
-import com.axon.distributed.member.RemoteMember;
-import com.axon.distributed.member.SpringLocalMember;
-import com.axon.distributed.messaging.HeartbeatMessage;
-import com.axon.distributed.mapper.MemberMapper;
+import io.github.cnadjim.axon.distributed.member.CustomMember;
+import io.github.cnadjim.axon.distributed.member.LocalMember;
+import io.github.cnadjim.axon.distributed.member.RemoteMember;
+import io.github.cnadjim.axon.distributed.member.SpringLocalMember;
+import io.github.cnadjim.axon.distributed.messaging.HeartbeatMessage;
+import io.github.cnadjim.axon.distributed.mapper.MemberMapper;
 import org.axonframework.commandhandling.CommandMessage;
 import org.axonframework.queryhandling.QueryMessage;
 import org.slf4j.Logger;

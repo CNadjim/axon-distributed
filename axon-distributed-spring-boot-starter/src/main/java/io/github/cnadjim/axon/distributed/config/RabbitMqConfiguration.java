@@ -1,4 +1,4 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

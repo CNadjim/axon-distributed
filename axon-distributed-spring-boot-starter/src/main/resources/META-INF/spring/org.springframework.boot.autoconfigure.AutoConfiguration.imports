@@ -1,5 +1,5 @@
-com.axon.distributed.autoconfigure.AxonDistributedAutoConfiguration
-com.axon.distributed.autoconfigure.FlywayAxonMigrationAutoConfiguration
+io.github.cnadjim.axon.distributed.autoconfigure.AxonDistributedAutoConfiguration
+io.github.cnadjim.axon.distributed.autoconfigure.FlywayAxonMigrationAutoConfiguration
 
 org.axonframework.extensions.amqp.autoconfig.AMQPAutoConfiguration
 

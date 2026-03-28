@@ -1,8 +1,8 @@
-package com.axon.distributed.command;
+package io.github.cnadjim.axon.distributed.command;
 
-import com.axon.distributed.discovery.MemberRegistry;
-import com.axon.distributed.messaging.SpringDispatchCommandMessage;
-import com.axon.distributed.messaging.SpringReplyCommandMessage;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.messaging.SpringDispatchCommandMessage;
+import io.github.cnadjim.axon.distributed.messaging.SpringReplyCommandMessage;
 import org.axonframework.commandhandling.*;
 import org.axonframework.commandhandling.callbacks.FutureCallback; // Import nécessaire
 import org.axonframework.commandhandling.distributed.CommandBusConnector;

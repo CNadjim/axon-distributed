@@ -37,7 +37,7 @@ Si le starter est installé/publish dans votre repository Maven interne :
 
 ```xml
 <dependency>
-  <groupId>com.axon.distributed</groupId>
+  <groupId>io.github.cnadjim</groupId>
   <artifactId>axon-distributed-spring-boot-starter</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 </dependency>

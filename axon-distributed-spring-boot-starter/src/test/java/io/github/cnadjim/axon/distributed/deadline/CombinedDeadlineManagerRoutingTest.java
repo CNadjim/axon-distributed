@@ -1,4 +1,4 @@
-package com.axon.distributed.deadline;
+package io.github.cnadjim.axon.distributed.deadline;
 
 import org.axonframework.deadline.DeadlineManager;
 import org.axonframework.messaging.ScopeDescriptor;

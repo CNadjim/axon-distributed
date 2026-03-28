@@ -1,4 +1,4 @@
-package com.axon.distributed.messaging;
+package io.github.cnadjim.axon.distributed.messaging;
 
 import java.util.Arrays;
 import java.util.Objects;

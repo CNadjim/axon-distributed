@@ -1,7 +1,7 @@
-package com.axon.distributed.router;
+package io.github.cnadjim.axon.distributed.router;
 
-import com.axon.distributed.member.CustomMember;
-import com.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.member.CustomMember;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
 import org.axonframework.commandhandling.CommandMessage;
 import org.axonframework.commandhandling.distributed.CommandMessageFilter;
 import org.axonframework.commandhandling.distributed.Member;

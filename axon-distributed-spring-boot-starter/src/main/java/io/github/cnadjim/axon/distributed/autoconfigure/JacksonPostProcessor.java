@@ -1,4 +1,4 @@
-package com.axon.distributed.autoconfigure;
+package io.github.cnadjim.axon.distributed.autoconfigure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;

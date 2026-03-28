@@ -1,6 +1,6 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
-import com.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
 import com.rabbitmq.client.Channel;
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.config.ConfigurerModule;

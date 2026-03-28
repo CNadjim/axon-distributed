@@ -1,6 +1,6 @@
-package com.axon.distributed.autoconfigure;
+package io.github.cnadjim.axon.distributed.autoconfigure;
 
-import com.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

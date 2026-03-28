@@ -1,9 +1,9 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
-import com.axon.distributed.AxonDistributedProperties;
-import com.axon.distributed.discovery.MemberRegistry;
-import com.axon.distributed.query.DistributedQueryBus;
-import com.axon.distributed.router.CustomRouter;
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.query.DistributedQueryBus;
+import io.github.cnadjim.axon.distributed.router.CustomRouter;
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.messaging.interceptors.CorrelationDataInterceptor;
 import org.axonframework.queryhandling.*;

@@ -1,8 +1,8 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
-import com.axon.distributed.AxonDistributedProperties;
-import com.axon.distributed.discovery.InMemoryMemberRegistry;
-import com.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.discovery.InMemoryMemberRegistry;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.*;

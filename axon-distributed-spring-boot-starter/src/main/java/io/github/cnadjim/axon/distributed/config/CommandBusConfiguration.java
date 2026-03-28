@@ -1,14 +1,13 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
-import com.axon.distributed.command.SpringCommandBusConnector;
-import com.axon.distributed.discovery.MemberRegistry;
-import com.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.command.SpringCommandBusConnector;
+import io.github.cnadjim.axon.distributed.discovery.MemberRegistry;
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
 import org.axonframework.commandhandling.CommandBus;
 import org.axonframework.commandhandling.CommandBusSpanFactory;
 import org.axonframework.commandhandling.DuplicateCommandHandlerResolver;
 import org.axonframework.commandhandling.SimpleCommandBus;
 import org.axonframework.commandhandling.distributed.*;
-import org.axonframework.common.Registration;
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.messaging.interceptors.CorrelationDataInterceptor;
 import org.axonframework.serialization.Serializer;

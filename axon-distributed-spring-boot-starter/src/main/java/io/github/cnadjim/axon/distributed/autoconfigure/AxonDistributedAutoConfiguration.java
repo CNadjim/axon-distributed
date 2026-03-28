@@ -1,7 +1,7 @@
-package com.axon.distributed.autoconfigure;
+package io.github.cnadjim.axon.distributed.autoconfigure;
 
-import com.axon.distributed.AxonDistributedProperties;
-import com.axon.distributed.config.*;
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.config.*;
 import org.axonframework.springboot.autoconfig.AxonAutoConfiguration;
 import org.axonframework.springboot.autoconfig.AxonDbSchedulerAutoConfiguration;
 import org.slf4j.Logger;

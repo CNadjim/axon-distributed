@@ -1,4 +1,4 @@
-package com.axon.distributed.member;
+package io.github.cnadjim.axon.distributed.member;
 
 import java.util.HashSet;
 import java.util.Set;

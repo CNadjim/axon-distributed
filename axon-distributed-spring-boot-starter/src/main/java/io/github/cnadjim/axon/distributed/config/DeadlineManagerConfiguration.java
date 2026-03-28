@@ -1,7 +1,7 @@
-package com.axon.distributed.config;
+package io.github.cnadjim.axon.distributed.config;
 
 
-import com.axon.distributed.deadline.CombinedDeadlineManager;
+import io.github.cnadjim.axon.distributed.deadline.CombinedDeadlineManager;
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.config.ConfigurationScopeAwareProvider;
 import org.axonframework.deadline.DeadlineManager;
