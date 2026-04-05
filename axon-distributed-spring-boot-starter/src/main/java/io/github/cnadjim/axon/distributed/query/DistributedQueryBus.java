@@ -145,8 +145,7 @@ public class DistributedQueryBus implements QueryBus {
                 queryExchange,
                 routingKey,
                 dispatchMessage,
-                new ParameterizedTypeReference<>() {
-                }
+                new ParameterizedTypeReference<>() {}
         );
 
         if (replyMessage == null) {

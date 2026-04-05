@@ -64,12 +64,20 @@ axon:
       # Claim timeout in milliseconds
       claim-timeout: 10000
 
-    # Dead Letter Queue Configuration (Phase 1)
+    # Dead Letter Queue Configuration
     dead-letter:
       # Enable dead letter queue
       enabled: true
+      # DLQ exchange name
+      exchange: axon.deadletter
       # Maximum retry attempts before moving to DLQ
       max-retries: 3
+      # Initial retry interval in milliseconds
+      initial-interval: 1000
+      # Multiplier for exponential backoff between retries
+      multiplier: 2.0
+      # Maximum retry interval in milliseconds
+      max-interval: 10000
 
 # Spring DataSource Configuration
 spring:

@@ -238,12 +238,22 @@ public class AxonDistributedProperties {
 
     /**
      * Dead Letter Queue configuration properties.
+     * <p>
+     * Controls retry behavior with exponential backoff before routing
+     * failed messages to a Dead Letter Queue (DLQ).
      */
     public static class DeadLetterProperties {
         public static final String DEFAULT_EXCHANGE = "axon.deadletter";
         private String exchange = DEFAULT_EXCHANGE;
+        /** Maximum number of delivery attempts (including the first). */
         private int maxRetries = 3;
         private boolean enabled = true;
+        /** Initial retry interval in milliseconds. */
+        private long initialInterval = 1000;
+        /** Multiplier for exponential backoff between retries. */
+        private double multiplier = 2.0;
+        /** Maximum retry interval in milliseconds. */
+        private long maxInterval = 10000;
 
         public String getExchange() {
             return exchange;
@@ -267,6 +277,30 @@ public class AxonDistributedProperties {
 
         public void setMaxRetries(int maxRetries) {
             this.maxRetries = maxRetries;
+        }
+
+        public long getInitialInterval() {
+            return initialInterval;
+        }
+
+        public void setInitialInterval(long initialInterval) {
+            this.initialInterval = initialInterval;
+        }
+
+        public double getMultiplier() {
+            return multiplier;
+        }
+
+        public void setMultiplier(double multiplier) {
+            this.multiplier = multiplier;
+        }
+
+        public long getMaxInterval() {
+            return maxInterval;
+        }
+
+        public void setMaxInterval(long maxInterval) {
+            this.maxInterval = maxInterval;
         }
     }
 

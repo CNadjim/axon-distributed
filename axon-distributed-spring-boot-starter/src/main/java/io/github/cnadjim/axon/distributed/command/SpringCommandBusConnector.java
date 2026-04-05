@@ -73,7 +73,7 @@ public class SpringCommandBusConnector implements CommandBusConnector {
      * Handler RabbitMQ synchrone utilisant FutureCallback.
      */
     @RabbitListener(queues = "#{commandQueueName}")
-    public <C, R> SpringReplyCommandMessage<R> handle(SpringDispatchCommandMessage<C> dispatchMessage) {
+    public <C, R> SpringReplyCommandMessage<R> onCommand(SpringDispatchCommandMessage<C> dispatchMessage) {
         CommandMessage<C> commandMessage;
 
         try {
