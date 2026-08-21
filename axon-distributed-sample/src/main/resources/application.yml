@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: local
+
+  application:
+    name: axon-distributed-sample
+
+  flyway:
+    locations: classpath:db/migration/flyway
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false

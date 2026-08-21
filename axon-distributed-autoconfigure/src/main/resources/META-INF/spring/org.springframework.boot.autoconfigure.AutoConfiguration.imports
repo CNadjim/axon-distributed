@@ -1,0 +1,3 @@
+io.github.cnadjim.axon.distributed.autoconfigure.AxonDistributedQueryAutoConfiguration
+io.github.cnadjim.axon.distributed.autoconfigure.AxonDistributedFlywayMigrationAutoConfiguration
+io.github.cnadjim.axon.distributed.autoconfigure.AxonDistributedFallbackRegistrationAutoConfiguration

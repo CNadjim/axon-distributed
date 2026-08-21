@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: true
+        all-namespaces: false
+      client:
+        namespace: default
+
+  kafka:
+    bootstrap-servers: kafka:9092
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/axon_distributed
+    username: ${DB_USERNAME:axon}
+    password: ${DB_PASSWORD:axon}

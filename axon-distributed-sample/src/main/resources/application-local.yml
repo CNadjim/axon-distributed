@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: false
+    discovery:
+      client:
+        simple:
+          instances:
+            axon-distributed-sample:
+              - uri: http://localhost:8080
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/axon_distributed
+    username: axon
+    password: axon
