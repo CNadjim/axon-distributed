@@ -1,7 +1,6 @@
 package io.github.cnadjim.axon.distributed.autoconfigure;
 
-import io.github.cnadjim.axon.distributed.autoconfigure.kafka.AxonDistributedKafkaDefaults;
-import io.github.cnadjim.axon.distributed.autoconfigure.springcloud.AxonDistributedSpringCloudDefaults;
+import org.axonframework.extensions.kafka.KafkaProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.core.Ordered;
@@ -36,8 +35,18 @@ public class AxonDistributedEnvironmentPostProcessor implements EnvironmentPostP
         defaultProperties.put("axon.serializer.event", "jackson");
         defaultProperties.put("axon.update-check.disabled", true);
 
-        defaultProperties.putAll(AxonDistributedSpringCloudDefaults.defaults());
-        defaultProperties.putAll(AxonDistributedKafkaDefaults.defaults(applicationName));
+        defaultProperties.put("axon.distributed.enabled", true);
+        defaultProperties.put("axon.distributed.spring-cloud.enabled", true);
+        defaultProperties.put("axon.distributed.spring-cloud.mode", "rest");
+        defaultProperties.put("axon.distributed.spring-cloud.rest-mode-url", "/command-capabilities");
+
+        defaultProperties.put("axon.kafka.enabled", true);
+        defaultProperties.put("axon.kafka.default-topic", KafkaProperties.DEFAULT_TOPIC);
+        defaultProperties.put("axon.kafka.client-id", applicationName);
+        defaultProperties.put("axon.eventhandling.processors.profile.mode", "tracking");
+        defaultProperties.put("axon.eventhandling.processors.profile.source", "streamableKafkaMessageSource");
+        defaultProperties.put("axon.kafka.producer.event-processor-mode", "tracking");
+        defaultProperties.put("axon.kafka.consumer.auto-offset-reset", "earliest");
 
         MutablePropertySources propertySources = environment.getPropertySources();
         if (propertySources.contains(PROPERTY_SOURCE_NAME)) {

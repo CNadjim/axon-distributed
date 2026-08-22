@@ -1,4 +1,4 @@
-package io.github.cnadjim.axon.distributed.autoconfigure;
+package io.github.cnadjim.axon.distributed;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

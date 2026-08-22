@@ -1,0 +1,65 @@
+package io.github.cnadjim.axon.distributed.autoconfigure;
+
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
+import io.github.cnadjim.axon.distributed.deadline.CombinedDeadlineManager;
+import org.axonframework.common.transaction.TransactionManager;
+import org.axonframework.config.ConfigurationScopeAwareProvider;
+import org.axonframework.deadline.DeadlineManager;
+import org.axonframework.deadline.SimpleDeadlineManager;
+import org.axonframework.deadline.dbscheduler.DbSchedulerDeadlineManager;
+import org.axonframework.springboot.autoconfig.AxonAutoConfiguration;
+import org.axonframework.springboot.autoconfig.AxonDbSchedulerAutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+
+
+@AutoConfiguration(before = {
+        AxonAutoConfiguration.class,
+        AxonDbSchedulerAutoConfiguration.class
+})
+@EnableConfigurationProperties(AxonDistributedProperties.class)
+@ConditionalOnProperty(prefix = "axon.starter", name = "enabled", havingValue = "true", matchIfMissing = true)
+public class AxonDistributedDeadlineAutoConfiguration {
+
+
+    /**
+     * Crée un CombinedDeadlineManager (transient + persistant) quand db-scheduler est disponible.
+     * Les deadlines courtes (< 5 min) utilisent SimpleDeadlineManager (in-memory),
+     * les deadlines longues utilisent DbSchedulerDeadlineManager (base de données).
+     */
+    @Bean
+    @ConditionalOnBean(DbSchedulerDeadlineManager.class)
+    public DeadlineManager deadlineManager(
+            DbSchedulerDeadlineManager dbSchedulerDeadlineManager,
+            org.axonframework.config.Configuration configuration,
+            TransactionManager transactionManager
+    ) {
+        return new CombinedDeadlineManager(
+                new SimpleDeadlineManager.Builder()
+                        .scopeAwareProvider(new ConfigurationScopeAwareProvider(configuration))
+                        .transactionManager(transactionManager)
+                        .build(),
+                dbSchedulerDeadlineManager
+        );
+    }
+
+    /**
+     * Fallback : SimpleDeadlineManager seul quand db-scheduler n'est pas sur le classpath.
+     * Uniquement pour les deadlines in-memory (non persistantes au redémarrage).
+     */
+    @Bean
+    @ConditionalOnMissingBean(DbSchedulerDeadlineManager.class)
+    public DeadlineManager simpleDeadlineManager(
+            org.axonframework.config.Configuration configuration,
+            TransactionManager transactionManager
+    ) {
+        return new SimpleDeadlineManager.Builder()
+                .scopeAwareProvider(new ConfigurationScopeAwareProvider(configuration))
+                .transactionManager(transactionManager)
+                .build();
+    }
+}

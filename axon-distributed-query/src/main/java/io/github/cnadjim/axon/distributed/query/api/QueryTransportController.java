@@ -32,14 +32,14 @@ public class QueryTransportController {
 
     private static final Duration CONNECT_TIMEOUT = Duration.ofSeconds(2);
     private static final Duration READ_TIMEOUT = Duration.ofSeconds(10);
-    private static final String QUERY_BUS_CONNECTOR_PATH = "/spring-query-bus-connector/query";
+    public static final String QUERY_BUS_CONNECTOR_ENDPOINT = "/spring-query-bus-connector/query";
 
     public QueryTransportController(QueryBus localQueryBus, Serializer serializer) {
         this.localQueryBus = localQueryBus;
         this.serializer = serializer;
     }
 
-    @PostMapping(QUERY_BUS_CONNECTOR_PATH)
+    @PostMapping(QUERY_BUS_CONNECTOR_ENDPOINT)
     public ReplyQueryMessage handle(@RequestBody DispatchQueryMessage dispatchMessage) {
         return process(dispatchMessage);
     }

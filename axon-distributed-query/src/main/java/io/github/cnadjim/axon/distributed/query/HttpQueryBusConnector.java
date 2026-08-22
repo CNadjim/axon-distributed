@@ -19,7 +19,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.TimeoutException;
 
-import static io.github.cnadjim.axon.distributed.query.api.QueryCapabilitiesController.CAPABILITIES_ENDPOINT;
+import static io.github.cnadjim.axon.distributed.query.api.QueryCapabilitiesController.QUERY_CAPABILITIES_ENDPOINT;
+import static io.github.cnadjim.axon.distributed.query.api.QueryTransportController.QUERY_BUS_CONNECTOR_ENDPOINT;
 
 
 public class HttpQueryBusConnector {
@@ -38,7 +39,7 @@ public class HttpQueryBusConnector {
     @SuppressWarnings("unchecked")
     public <Q, R> QueryResponseMessage<R> send(ServiceInstance instance, QueryMessage<Q, R> queryMessage) {
         DispatchQueryMessage dispatchMessage = new DispatchQueryMessage(queryMessage, serializer);
-        URI uri = buildUri(instance);
+        URI uri = buildUri(instance, QUERY_BUS_CONNECTOR_ENDPOINT);
 
         try {
             ReplyQueryMessage reply = restTemplate.postForObject(uri, dispatchMessage, ReplyQueryMessage.class);
@@ -60,7 +61,7 @@ public class HttpQueryBusConnector {
     }
 
     public QueryCapabilities fetchCapabilities(ServiceInstance instance) {
-        URI uri = buildUri(instance);
+        URI uri = buildUri(instance, QUERY_CAPABILITIES_ENDPOINT);
         return restTemplate.getForObject(uri, QueryCapabilities.class);
     }
 
@@ -69,9 +70,9 @@ public class HttpQueryBusConnector {
                 queryMessage.getResponseType().responseMessagePayloadType(), exception);
     }
 
-    private URI buildUri(ServiceInstance instance) {
+    private URI buildUri(ServiceInstance instance, String path) {
         try {
-            return new URI(instance.getUri().toString() + CAPABILITIES_ENDPOINT);
+            return new URI(instance.getUri().toString() + path);
         } catch (URISyntaxException e) {
             throw new IllegalStateException("Could not build URI for service instance " + instance, e);
         }

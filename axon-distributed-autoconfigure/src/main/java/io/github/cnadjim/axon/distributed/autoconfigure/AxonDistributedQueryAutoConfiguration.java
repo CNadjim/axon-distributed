@@ -1,5 +1,6 @@
 package io.github.cnadjim.axon.distributed.autoconfigure;
 
+import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
 import io.github.cnadjim.axon.distributed.query.HttpQueryBusConnector;
 import io.github.cnadjim.axon.distributed.query.QueryCapabilityRegistry;
 import io.github.cnadjim.axon.distributed.query.SpringCloudDistributedQueryBus;

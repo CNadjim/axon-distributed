@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QueryCapabilitiesController {
 
-    public static final String CAPABILITIES_ENDPOINT = "/query-capabilities";
+    public static final String QUERY_CAPABILITIES_ENDPOINT = "/query-capabilities";
 
     private final QueryCapabilityRegistry registry;
     private final Registration registration;
@@ -23,7 +23,7 @@ public class QueryCapabilitiesController {
         this.registration = registration;
     }
 
-    @GetMapping(path = CAPABILITIES_ENDPOINT)
+    @GetMapping(path = QUERY_CAPABILITIES_ENDPOINT)
     public QueryCapabilities capabilities() {
         return new QueryCapabilities(registration.getServiceId(), registration.getInstanceId(), registry.snapshot());
     }
