@@ -16,9 +16,8 @@ import java.util.Map;
 
 
 @AutoConfiguration
-@AutoConfigureOrder(Ordered.LOWEST_PRECEDENCE)
 @ConditionalOnClass(Registration.class)
-@ConditionalOnProperty(prefix = "axon.starter", name = "enabled", havingValue = "true", matchIfMissing = true)
+@AutoConfigureOrder(Ordered.LOWEST_PRECEDENCE)
 public class AxonDistributedFallbackRegistrationAutoConfiguration {
 
     @Bean

@@ -15,15 +15,9 @@ import java.util.Map;
 public class AxonDistributedEnvironmentPostProcessor implements EnvironmentPostProcessor, Ordered {
 
     private static final String PROPERTY_SOURCE_NAME = "axonDistributedDefaultProperties";
-    private static final String ENABLED_PROPERTY = "axon.starter.enabled";
 
     @Override
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
-        boolean enabled = environment.getProperty(ENABLED_PROPERTY, Boolean.class, Boolean.TRUE);
-
-        if (!enabled) {
-            return;
-        }
 
         String applicationName = environment.getProperty("spring.application.name", "axon-distributed-application");
 

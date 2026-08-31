@@ -1,6 +1,5 @@
 package io.github.cnadjim.axon.distributed.autoconfigure;
 
-import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
 import io.github.cnadjim.axon.distributed.deadline.CombinedDeadlineManager;
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.config.ConfigurationScopeAwareProvider;
@@ -12,8 +11,6 @@ import org.axonframework.springboot.autoconfig.AxonDbSchedulerAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 
@@ -21,8 +18,6 @@ import org.springframework.context.annotation.Bean;
         AxonAutoConfiguration.class,
         AxonDbSchedulerAutoConfiguration.class
 })
-@EnableConfigurationProperties(AxonDistributedProperties.class)
-@ConditionalOnProperty(prefix = "axon.starter", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class AxonDistributedDeadlineAutoConfiguration {
 
 

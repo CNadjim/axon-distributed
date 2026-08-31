@@ -10,16 +10,6 @@ import jakarta.persistence.Table;
 @Table(name = "order_entry")
 public class OrderEntity {
 
-    @Id
-    @Column(name = "order_id", length = 255, nullable = false)
-    private String orderId;
-
-    @Column(name = "product", length = 255)
-    private String product;
-
-    @Column(name = "quantity", length = 255)
-    private int quantity;
-
     public OrderEntity(){
 
     }
@@ -32,6 +22,16 @@ public class OrderEntity {
         this.product = product;
         this.quantity = quantity;
     }
+
+    @Id
+    @Column(name = "order_id", length = 255, nullable = false)
+    private String orderId;
+
+    @Column(name = "product", length = 255)
+    private String product;
+
+    @Column(name = "quantity", length = 255)
+    private int quantity;
 
     public String getOrderId() {
         return orderId;

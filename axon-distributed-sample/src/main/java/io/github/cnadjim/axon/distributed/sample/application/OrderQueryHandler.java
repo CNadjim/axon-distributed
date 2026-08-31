@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Component
 public class OrderQueryHandler {
-
     private final OrderRepository orderRepository;
 
     public OrderQueryHandler(OrderRepository orderRepository) {

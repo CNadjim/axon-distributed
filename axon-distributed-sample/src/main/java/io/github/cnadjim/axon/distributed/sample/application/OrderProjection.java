@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderProjection {
     private static final Logger logger = LoggerFactory.getLogger(OrderProjection.class);
-
     private final OrderRepository orderRepository;
 
     public OrderProjection(OrderRepository orderRepository) {

@@ -26,13 +26,15 @@ public class OrderController {
     @PostMapping
     public CompletableFuture<String> create(@RequestBody CreateOrderRequest request) {
         String orderId = UUID.randomUUID().toString();
-        return commandGateway.send(new CreateOrderCommand(orderId, request.product(), request.quantity()))
+        return commandGateway
+                .send(new CreateOrderCommand(orderId, request.product(), request.quantity()))
                 .thenApply(result -> orderId);
     }
 
     @GetMapping("/{orderId}")
     public CompletableFuture<OrderEntity> get(@PathVariable("orderId") String orderId) {
-        return queryGateway.query(new FindOrderById(orderId), ResponseTypes.instanceOf(OrderEntity.class));
+        return queryGateway
+                .query(new FindOrderById(orderId), ResponseTypes.instanceOf(OrderEntity.class));
     }
 
     public record CreateOrderRequest(String product, int quantity) {

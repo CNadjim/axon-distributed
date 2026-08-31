@@ -1,6 +1,5 @@
 package io.github.cnadjim.axon.distributed.autoconfigure;
 
-import io.github.cnadjim.axon.distributed.AxonDistributedProperties;
 import io.github.cnadjim.axon.distributed.query.HttpQueryBusConnector;
 import io.github.cnadjim.axon.distributed.query.QueryCapabilityRegistry;
 import io.github.cnadjim.axon.distributed.query.SpringCloudDistributedQueryBus;
@@ -12,8 +11,6 @@ import org.axonframework.serialization.Serializer;
 import org.axonframework.springboot.autoconfig.AxonAutoConfiguration;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +22,6 @@ import java.util.concurrent.Executors;
 
 
 @AutoConfiguration(after = AxonAutoConfiguration.class)
-@EnableConfigurationProperties(AxonDistributedProperties.class)
-@ConditionalOnProperty(prefix = "axon.starter", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class AxonDistributedQueryAutoConfiguration {
 
     @Bean
